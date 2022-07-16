@@ -1,3 +1,28 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+main {
+  background-color: white;
+  display: flex;
+  div {
+    span {
+      width: 100px;
+      height: 100px;
+      border: 2px grey solid;
+      color: grey;
+      display: grid;
+      place-items: center;
+    }
+  }
 }
