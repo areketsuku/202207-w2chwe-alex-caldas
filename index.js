@@ -29,11 +29,11 @@ const reviveCells = () => {
     }
   }
 };
+
 const introduceCellToNeighbors = (y, x) => {
   const neighbor = div[y].children[x];
-  let neighborCounter = neighbor.getAttribute("data-neighbors");
+  const neighborCounter = neighbor.getAttribute("data-neighbors");
   neighbor.setAttribute("data-neighbors", Number(neighborCounter) + 1);
-  neighborCounter = neighbor.getAttribute("data-neighbors");
 };
 
 const checkForNeighbors = (y, x) => {
@@ -41,11 +41,9 @@ const checkForNeighbors = (y, x) => {
   for (my; my <= y + 1; my += 1) {
     let mx = x - 1;
     for (mx; mx <= x + 1; mx += 1) {
-      if (div[my] !== undefined) {
-        if (div[my].children[mx] !== undefined) {
-          if (mx !== x || my !== y) {
-            introduceCellToNeighbors(my, mx);
-          }
+      if (div[my] !== undefined && div[my].children[mx] !== undefined) {
+        if (mx !== x || my !== y) {
+          introduceCellToNeighbors(my, mx);
         }
       }
     }
