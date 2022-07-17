@@ -26,16 +26,16 @@ class Grid {
   }
 
   startGame() {
-    if (document.getElementById("start-stop").checked) {
-      this.paint = false;
-      this.interval = window.setInterval(() => {
-        console.log("tic-tac");
-      }, this.speed);
-    } else {
-      window.clearInterval(this.interval);
-      this.interval = null;
-      this.paint = true;
-    }
+    this.paint = false;
+    this.interval = window.setInterval(() => {
+      console.log("tic-tac");
+    }, this.speed);
+  }
+
+  stopGame() {
+    window.clearInterval(this.interval);
+    this.interval = null;
+    this.paint = true;
   }
 }
 

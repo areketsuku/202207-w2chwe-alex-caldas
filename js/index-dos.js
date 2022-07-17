@@ -5,6 +5,8 @@ let gridWidth;
 let gridHeight;
 
 document.getElementById("submit").addEventListener("click", () => {
+  document.getElementById("start-stop").checked = false;
+  ThisGrid.stopGame();
   gridWidth = document.getElementById("width").value;
   gridHeight = document.getElementById("height").value;
   ThisGrid = new Grid(gridHeight, gridWidth);
@@ -21,5 +23,9 @@ document.addEventListener("click", (e) => {
 });
 
 document.getElementById("start-stop").addEventListener("change", () => {
-  ThisGrid.startGame();
+  if (document.getElementById("start-stop").checked === true) {
+    ThisGrid.startGame();
+  } else {
+    ThisGrid.stopGame();
+  }
 });
