@@ -10,48 +10,17 @@
   </head>
   <body>
     <header>
-      <form action="">
-        <label for="start-stop">start-stop</label>
+      <form id="grid-form" onsubmit="event.preventDefault()">
         <input type="checkbox" id="start-stop" />
+        <label for="start-stop">start-stop</label>
+        <label for="height">Grid height:</label>
+        <input type="number" id="height" />
+        <label for="width">Grid width:</label>
+        <input type="number" id="width" />
+        <input type="submit" value="Create" id="submit" />
       </form>
     </header>
-    <main>
-      <div>
-        <span data-neighbours="0" class="alive"></span>
-        <span data-neighbours="0" class="alive"></span>
-        <span data-neighbours="0" class="alive"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-      </div>
-      <div>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-      </div>
-      <div>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0" class="alive"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-      </div>
-      <div>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-      </div>
-      <div>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0"></span>
-        <span data-neighbours="0" class="alive"></span>
-        <span data-neighbours="0" class="alive"></span>
-        <span data-neighbours="0" class="alive"></span>
-      </div>
-    </main>
+    <main></main>
     <script type="module" src="js/index-dos.js"></script>
   </body>
 </html>
