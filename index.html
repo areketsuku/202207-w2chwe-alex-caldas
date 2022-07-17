@@ -14,13 +14,16 @@
         <input type="checkbox" id="startStop" />
         <label for="startStop">start/stop</label>
         <label for="height">Grid height:</label>
-        <input type="number" id="height" />
+        <input type="number" id="height" value="5" />
         <label for="width">Grid width:</label>
-        <input type="number" id="width" />
+        <input type="number" id="width" value="5" />
         <label for="speed">Speed: </label>
-        <input type="number" id="speed" />
+        <input type="number" id="speed" value="1000" />
         <input type="submit" value="Create" id="submit" placeholder="1000" />
       </form>
+      <br />
+      <span>Generation counter: </span>
+      <span id="generationCounter"></span>
     </header>
     <main></main>
     <script type="module" src="js/index.js"></script>

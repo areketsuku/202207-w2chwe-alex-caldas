@@ -14,30 +14,34 @@ body {
   justify-content: center;
   align-items: center;
 }
-main {
-  width: fit-content;
+header {
   height: fit-content;
-}
-form {
   margin: 20px 0;
-}
-label[for="startStop"] {
-  cursor: pointer;
-}
-input[type="checkbox"] {
-  display: none;
-  + label[for="startStop"] {
-    border-radius: 10px;
-    color: white;
-    background-color: red;
-    padding: 10px;
-  }
-  &:checked {
-    + label[for="startStop"] {
-      background-color: green;
+  form {
+    height: fit-content;
+    * {
+      padding: 5px;
+      border: 0;
+      border-radius: 5px;
+    }
+    label[for="startStop"] {
+      cursor: pointer;
+    }
+    input[type="checkbox"] {
+      display: none;
+      + label[for="startStop"] {
+        color: white;
+        background-color: red;
+      }
+      &:checked {
+        + label[for="startStop"] {
+          background-color: green;
+        }
+      }
     }
   }
 }
+
 main {
   background-color: white;
   display: flex;

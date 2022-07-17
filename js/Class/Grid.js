@@ -3,13 +3,18 @@ class Grid {
   gridHeight;
   gridWidth;
   interval;
-  speed = 10;
+  speed;
+  generation = 0;
+  life = false;
   paint = true;
 
-  constructor(inputHeight, inputWidth) {
+  constructor(inputHeight, inputWidth, inputSpeed) {
     this.gridWidth = inputWidth;
     this.gridHeight = inputHeight;
+    this.speed = inputSpeed;
     this.gridBuild();
+    this.generation = 0;
+    document.getElementById("generationCounter").innerHTML = this.generation;
   }
 
   gridBuild() {
@@ -26,6 +31,13 @@ class Grid {
   }
 
   setNeighborsCountersToZero() {
+    if (this.life) {
+      document.getElementById("generationCounter").innerHTML = this.generation;
+    } else {
+      this.stopGame();
+      document.getElementById("generationCounter").innerHTML += " Extinción";
+      document.getElementById("startStop").checked = false;
+    }
     let y = 0;
     for (y; y < this.gridHeight; y += 1) {
       let x = 0;
@@ -33,6 +45,7 @@ class Grid {
         this.div[y].children[x].setAttribute("data-neighbors", 0);
       }
     }
+    this.life = false;
   }
 
   reviveCells() {
@@ -45,9 +58,13 @@ class Grid {
         if (cell.classList[0] !== "alive") {
           if (cellNeighbors > 2) {
             cell.classList.add("alive");
+            this.life = true;
           }
         } else if (cellNeighbors < 2 || cellNeighbors > 3) {
           cell.classList.remove("alive");
+          this.life = true;
+        } else {
+          this.life = true;
         }
       }
     }
@@ -90,9 +107,11 @@ class Grid {
     this.setNeighborsCountersToZero();
   }
 
-  startGame() {
+  startGame(inputSpeed) {
+    this.speed = inputSpeed;
     this.paint = false;
     this.interval = window.setInterval(() => {
+      this.generation += 1;
       this.checkForAliveCells();
     }, this.speed);
   }
