@@ -3,7 +3,7 @@ class Grid {
   gridHeight;
   gridWidth;
   interval;
-  speed = 1000;
+  speed = 10;
   paint = true;
 
   constructor(inputHeight, inputWidth) {
@@ -93,7 +93,6 @@ class Grid {
   startGame() {
     this.paint = false;
     this.interval = window.setInterval(() => {
-      console.log("tic-tac");
       this.checkForAliveCells();
     }, this.speed);
   }

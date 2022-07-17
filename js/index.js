@@ -43,3 +43,9 @@ document.getElementById("start-stop").addEventListener("change", () => {
 document.getElementById("submit").addEventListener("click", () => {
   newGrid();
 });
+
+document.getElementById("speed").addEventListener("change", () => {
+  if (document.getElementById("start-stop").checked === false) {
+    ThisGrid.speed = document.getElementById("speed").value;
+  }
+});
