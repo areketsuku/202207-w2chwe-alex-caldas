@@ -15,7 +15,7 @@ function changeLifeOfClickedCell(e) {
 }
 
 function startStopGame() {
-  if (document.getElementById("start-stop").checked === true) {
+  if (document.getElementById("startStop").checked === true) {
     ThisGrid.startGame();
   } else {
     ThisGrid.stopGame();
@@ -23,7 +23,7 @@ function startStopGame() {
 }
 
 function newGrid() {
-  document.getElementById("start-stop").checked = false;
+  document.getElementById("startStop").checked = false;
   ThisGrid.stopGame();
 
   gridWidth = document.getElementById("width").value;
@@ -36,7 +36,7 @@ document.addEventListener("click", (e) => {
   changeLifeOfClickedCell(e);
 });
 
-document.getElementById("start-stop").addEventListener("change", () => {
+document.getElementById("startStop").addEventListener("change", () => {
   startStopGame();
 });
 
@@ -45,7 +45,7 @@ document.getElementById("submit").addEventListener("click", () => {
 });
 
 document.getElementById("speed").addEventListener("change", () => {
-  if (document.getElementById("start-stop").checked === false) {
+  if (document.getElementById("startStop").checked === false) {
     ThisGrid.speed = document.getElementById("speed").value;
   }
 });

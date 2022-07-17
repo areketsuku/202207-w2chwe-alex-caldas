@@ -21,19 +21,19 @@ main {
 form {
   margin: 20px 0;
 }
-label[for="start-stop"] {
+label[for="startStop"] {
   cursor: pointer;
 }
 input[type="checkbox"] {
   display: none;
-  + label[for="start-stop"] {
+  + label[for="startStop"] {
     border-radius: 10px;
     color: white;
     background-color: red;
     padding: 10px;
   }
   &:checked {
-    + label[for="start-stop"] {
+    + label[for="startStop"] {
       background-color: green;
     }
   }
