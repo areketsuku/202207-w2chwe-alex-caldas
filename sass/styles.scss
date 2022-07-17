@@ -9,8 +9,34 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: grey;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: fit-content;
+  height: fit-content;
+}
+form {
+  margin: 20px 0;
+}
+label[for="start-stop"] {
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  display: none;
+  + label[for="start-stop"] {
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+  }
+  &:checked {
+    + label[for="start-stop"] {
+      background-color: green;
+    }
+  }
 }
 main {
   background-color: white;
